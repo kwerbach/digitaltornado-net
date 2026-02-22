@@ -52,17 +52,8 @@
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       height: 56px;
-    }
-    nav .nav-logo {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 0.85em;
-      color: white;
-      text-decoration: none;
-      letter-spacing: 2px;
-      text-transform: uppercase;
     }
     nav .nav-links a {
       color: rgba(255,255,255,0.8);
@@ -78,12 +69,13 @@
 
     /* Hero */
     .hero {
-      background: var(--dark);
-      color: white;
-      padding: 120px 24px 80px;
+      background: white;
+      color: var(--dark);
+      padding: 110px 24px 70px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      border-bottom: 4px solid var(--red);
     }
     .hero-inner {
       max-width: 900px;
@@ -96,22 +88,13 @@
       width: 100%;
       margin-bottom: 30px;
     }
-    .hero .tagline {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.1em;
-      font-weight: 600;
-      color: rgba(255,255,255,0.7);
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
     .hero .venue {
       font-size: 1.15em;
-      color: rgba(255,255,255,0.6);
+      color: #666;
       font-weight: 300;
     }
     .hero .venue strong {
-      color: rgba(255,255,255,0.85);
+      color: var(--dark);
       font-weight: 600;
     }
     .hero-divider {
@@ -208,19 +191,21 @@
     .cta-button {
       display: inline-block;
       background: var(--red);
-      color: white;
+      color: white !important;
       padding: 12px 28px;
-      text-decoration: none;
+      text-decoration: none !important;
       font-weight: 600;
       font-size: 0.95em;
       letter-spacing: 0.5px;
       margin-top: 16px;
-      border: none;
+      border: none !important;
+      border-bottom: none !important;
       transition: background 0.2s;
     }
     .cta-button:hover {
       background: var(--dark-red);
-      border-bottom-color: transparent;
+      color: white !important;
+      border-bottom: none !important;
     }
 
     /* Schedule */
@@ -359,11 +344,9 @@
 
   <nav>
     <div class="nav-inner">
-      <a href="#" class="nav-logo">ATDT</a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#book">Book</a>
-        <a href="#schedule">Schedule</a>
         <a href="#speakers">Speakers</a>
         <a href="#organizer">Organizer</a>
       </div>
@@ -408,150 +391,7 @@
           <h3>After the Digital Tornado: Networks, Algorithms, Humanity</h3>
           <p>Edited by Kevin Werbach</p>
           <p>The conference resulted in an edited volume published by Cambridge University Press in 2020. Contributors include leading scholars in law, policy, technology, and business examining how algorithmic networks are reshaping society.</p>
-          <a href="https://www.cambridge.org/core/books/after-the-digital-tornado/3D4D45D04B0ECA99D8D8AF81DBAD147B" class="cta-button" target="_blank" rel="noopener">View at Cambridge University Press</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section" id="schedule">
-    <div class="section-inner">
-      <h2>Schedule</h2>
-      <div class="section-subtitle">Two days at Steinberg-Dietrich Hall</div>
-
-      <div class="schedule-day">
-        <h3>Friday, November 17</h3>
-        <div class="schedule-item">
-          <div class="schedule-time">11:00</div>
-          <div class="schedule-content"><span class="schedule-title">Registration</span></div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">12:00</div>
-          <div class="schedule-content"><span class="schedule-title">Lunch on your own</span></div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">1:00</div>
-          <div class="schedule-content">
-            <span class="schedule-title">Introduction</span>
-            <div class="schedule-speakers">Kevin Werbach, Wharton School; Geoffrey Garrett, Dean, The Wharton School</div>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">1:30</div>
-          <div class="schedule-content">
-            <span class="schedule-title">Panel: 20 Years of Internet Policy</span>
-            <div class="schedule-speakers">Christopher Marsden, University of Sussex (UK); Gigi Sohn, Open Society Foundations, Georgetown, and Mozilla; Sally Wentworth, The Internet Society</div>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">2:30</div>
-          <div class="schedule-content"><span class="schedule-title">Break</span></div>
-        </div>
-
-        <div class="schedule-theme">Theme I: Networks</div>
-        <p class="schedule-theme-desc">The network is the basic organizing structure of our increasingly digital society. This section considers how private and governmental actors seek to exploit the networked environment, and what mechanisms could promote the most desirable outcomes.</p>
-
-        <div class="schedule-item">
-          <div class="schedule-time">2:50</div>
-          <div class="schedule-content">
-            <span class="schedule-title">Networks 1</span>
-            <div class="schedule-speakers">Viktor Mayer-Sch&ouml;nberger, Oxford; Tim Wu, Columbia Law School; Discussant: Herbert Hovenkamp, Penn Law / Wharton</div>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">4:00</div>
-          <div class="schedule-content">
-            <span class="schedule-title">Networks 2</span>
-            <div class="schedule-speakers">Yochai Benkler, Harvard Law School; Julie Cohen, Georgetown Law Center; Discussant: Christopher Yoo, Penn Law School</div>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">5:10</div>
-          <div class="schedule-content"><span class="schedule-title">Reception</span></div>
-        </div>
-      </div>
-
-      <div class="schedule-day">
-        <h3>Saturday, November 18</h3>
-        <div class="schedule-item">
-          <div class="schedule-time">9:00</div>
-          <div class="schedule-content">
-            <span class="schedule-title">Welcome</span>
-            <div class="schedule-speakers">Kevin Werbach, Wharton School</div>
-          </div>
-        </div>
-
-        <div class="schedule-theme">Theme II: Algorithms</div>
-        <p class="schedule-theme-desc">As more and more decisions are automated through analytics that substitute correlations for causation and understanding, foundational notions of fairness and responsibility come into question.</p>
-
-        <div class="schedule-item">
-          <div class="schedule-time">9:20</div>
-          <div class="schedule-content">
-            <span class="schedule-title">Technical Talk: Machine Learning and Algorithms</span>
-            <div class="schedule-speakers">Michael Kearns, University of Pennsylvania</div>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">9:40</div>
-          <div class="schedule-content">
-            <span class="schedule-title">Algorithms 1</span>
-            <div class="schedule-speakers">Kartik Hosanagar, Wharton; Kevin Werbach, Wharton; Discussant: Kathy Strandburg, NYU</div>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">10:50</div>
-          <div class="schedule-content"><span class="schedule-title">Break</span></div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">11:10</div>
-          <div class="schedule-content">
-            <span class="schedule-title">Algorithms 2</span>
-            <div class="schedule-speakers">Deirdre Mulligan, UC Berkeley; Christian Sandvig, University of Michigan; Discussant: Ellen Goodman, Rutgers Law School</div>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">12:20</div>
-          <div class="schedule-content"><span class="schedule-title">Lunch</span></div>
-        </div>
-
-        <div class="schedule-theme">Theme III: Humanity</div>
-        <p class="schedule-theme-desc">What is the future for people in an environment increasingly dominated by data-driven algorithms and connected machines? Can we find solutions that promote human flourishing?</p>
-
-        <div class="schedule-item">
-          <div class="schedule-time">1:30</div>
-          <div class="schedule-content">
-            <span class="schedule-title">Technical Talk: Security and Privacy</span>
-            <div class="schedule-speakers">Bruce Schneier, Harvard</div>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">1:50</div>
-          <div class="schedule-content">
-            <span class="schedule-title">Humanity 1</span>
-            <div class="schedule-speakers">Helen Nissenbaum, Cornell; Siva Vaidhyanathan, University of Virginia; Discussant: Joel Reidenberg, Fordham Law School</div>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">3:00</div>
-          <div class="schedule-content"><span class="schedule-title">Break</span></div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">3:30</div>
-          <div class="schedule-content">
-            <span class="schedule-title">Humanity 2</span>
-            <div class="schedule-speakers">Brett Frischmann, Villanova; Shoshana Zuboff, Harvard Business School; Discussant: Joseph Turow, Annenberg School, Penn</div>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">4:40</div>
-          <div class="schedule-content">
-            <span class="schedule-title">Panel: Looking to the Future</span>
-            <div class="schedule-speakers">Karen Levy, Cornell; Julia Powles, NYU Law School &amp; Cornell Tech; Lauren Henry Scholz, Florida State University</div>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <div class="schedule-time">5:30</div>
-          <div class="schedule-content"><span class="schedule-title">Closing Reception</span></div>
+          <a href="https://www.cambridge.org/core/books/after-the-digital-tornado/B746434A076A9EC7FD10AF12D69E6EA4" class="cta-button" target="_blank" rel="noopener">View at Cambridge University Press</a>
         </div>
       </div>
     </div>

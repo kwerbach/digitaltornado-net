@@ -1,0 +1,38 @@
+name: Deploy to Pair Networks
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.PAIR_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -T 10 -H ${{ secrets.PAIR_SSH_HOST }} >> ~/.ssh/known_hosts 2>&1 || true
+
+      - name: Test SSH connection
+        run: |
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new -o PasswordAuthentication=no -o BatchMode=yes ${{ secrets.PAIR_SSH_USER }}@${{ secrets.PAIR_SSH_HOST }} "echo 'SSH connection successful'"
+
+      - name: Ensure deploy directory exists
+        run: |
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new -o PasswordAuthentication=no -o BatchMode=yes ${{ secrets.PAIR_SSH_USER }}@${{ secrets.PAIR_SSH_HOST }} "mkdir -p ~/public_html/digitaltornado.net"
+
+      - name: Deploy via rsync
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new -o PasswordAuthentication=no -o BatchMode=yes" \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='CLAUDE.md' \
+            --exclude='.gitignore' \
+            ./ \
+            ${{ secrets.PAIR_SSH_USER }}@${{ secrets.PAIR_SSH_HOST }}:~/public_html/digitaltornado.net/

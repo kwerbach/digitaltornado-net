@@ -4,143 +4,712 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>After the Digital Tornado</title>
-  <meta name="description" content="After the Digital Tornado — a conference and edited volume exploring the challenges and opportunities as physical and digital worlds merge. November 2017 at The Wharton School.">
+  <meta name="description" content="After the Digital Tornado: Networks, Algorithms, Humanity. A conference at The Wharton School (November 2017) and edited volume (Cambridge University Press, 2020), organized by Kevin Werbach.">
   <meta name="author" content="Kevin Werbach">
   <link rel="canonical" href="https://digitaltornado.net">
+  <link rel="icon" href="images/cropped-Tornado.png">
+  <meta property="og:title" content="After the Digital Tornado">
+  <meta property="og:description" content="Networks, Algorithms, Humanity. A conference at The Wharton School and edited volume from Cambridge University Press.">
+  <meta property="og:image" content="/images/Digital_Tornado.png">
+  <meta property="og:url" content="https://digitaltornado.net">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Source+Sans+3:wght@300;400;600&display=swap');
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red: #c0392b;
+      --dark-red: #8b1a1a;
+      --orange: #e67e22;
+      --dark: #1a1a1a;
+      --text: #333;
+      --light-bg: #fafaf8;
+      --section-bg: #f5f3f0;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Georgia', 'Times New Roman', serif;
-      color: #2c2c2c;
-      background: #fafaf8;
+      font-family: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+      background: var(--light-bg);
       line-height: 1.7;
+      font-size: 17px;
     }
-    .container {
-      max-width: 800px;
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(26, 26, 26, 0.97);
+      z-index: 1000;
+      padding: 0 24px;
+      backdrop-filter: blur(8px);
+    }
+    nav .nav-inner {
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
     }
-    header {
+    nav .nav-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.85em;
+      color: white;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    nav .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.85em;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-left: 28px;
+      transition: color 0.2s;
+    }
+    nav .nav-links a:hover { color: var(--orange); }
+
+    /* Hero */
+    .hero {
+      background: var(--dark);
+      color: white;
+      padding: 120px 24px 80px;
       text-align: center;
-      padding: 60px 0 40px;
-      border-bottom: 2px solid #4a1a1a;
-      margin-bottom: 50px;
+      position: relative;
+      overflow: hidden;
     }
-    header h1 {
-      font-size: 2.2em;
-      color: #4a1a1a;
-      margin-bottom: 12px;
-      line-height: 1.2;
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
-    header .subtitle {
+    .hero-logo {
+      max-width: 700px;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .hero .tagline {
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.1em;
-      color: #666;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
-    header .date {
-      font-size: 1em;
-      color: #888;
-      margin-top: 8px;
+    .hero .venue {
+      font-size: 1.15em;
+      color: rgba(255,255,255,0.6);
+      font-weight: 300;
     }
+    .hero .venue strong {
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+    }
+    .hero-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--orange);
+      margin: 24px auto;
+    }
+
+    /* Sections */
     .section {
-      margin-bottom: 40px;
+      padding: 70px 24px;
+    }
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .section-alt {
+      background: var(--section-bg);
     }
     .section h2 {
-      font-size: 1.3em;
-      color: #4a1a1a;
-      margin-bottom: 16px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid #ddd;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8em;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .section .section-subtitle {
+      font-size: 0.95em;
+      color: var(--red);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
     }
     .section p {
       margin-bottom: 16px;
     }
     .section a {
-      color: #4a1a1a;
+      color: var(--red);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
     }
-    .book-callout {
-      background: #f0eeec;
-      padding: 30px;
-      margin: 40px 0;
+    .section a:hover {
+      border-bottom-color: var(--red);
+    }
+
+    /* About columns */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .about-grid p {
+      font-size: 1em;
+    }
+
+    /* Origin callout */
+    .origin-box {
+      background: white;
+      border-left: 4px solid var(--orange);
+      padding: 28px 32px;
+      margin-top: 30px;
+    }
+    .origin-box p { margin-bottom: 12px; }
+    .origin-box p:last-child { margin-bottom: 0; }
+
+    /* Book section */
+    .book-layout {
       display: flex;
-      gap: 24px;
+      gap: 50px;
       align-items: center;
+      margin-top: 20px;
     }
-    .book-callout .text {
-      flex: 1;
+    .book-cover-wrap {
+      flex-shrink: 0;
     }
-    .book-callout h3 {
-      color: #4a1a1a;
-      margin-bottom: 8px;
-      font-size: 1.1em;
+    .book-cover-wrap img {
+      width: 200px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     }
-    .book-callout a {
-      color: #4a1a1a;
-    }
-    .origin {
-      background: #f7f5f3;
-      padding: 24px;
-      border-left: 3px solid #4a1a1a;
-      margin: 30px 0;
-    }
-    .origin p {
+    .book-text { flex: 1; }
+    .book-text h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3em;
+      font-weight: 700;
+      color: var(--dark);
       margin-bottom: 12px;
     }
-    .origin p:last-child {
-      margin-bottom: 0;
+    .cta-button {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      padding: 12px 28px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95em;
+      letter-spacing: 0.5px;
+      margin-top: 16px;
+      border: none;
+      transition: background 0.2s;
     }
-    footer {
-      text-align: center;
-      padding: 30px 0;
-      color: #999;
+    .cta-button:hover {
+      background: var(--dark-red);
+      border-bottom-color: transparent;
+    }
+
+    /* Schedule */
+    .schedule-day {
+      margin-bottom: 40px;
+    }
+    .schedule-day h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2em;
+      font-weight: 800;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--red);
+    }
+    .schedule-theme {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1em;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 24px 0 8px;
+    }
+    .schedule-theme-desc {
+      font-size: 0.92em;
+      color: #666;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .schedule-item {
+      display: flex;
+      gap: 20px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .schedule-time {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--red);
+      min-width: 60px;
+      font-size: 0.95em;
+    }
+    .schedule-content {
+      flex: 1;
+    }
+    .schedule-title {
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .schedule-speakers {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    /* Speakers grid */
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .speaker {
+      padding: 16px;
+      background: white;
+      border-left: 3px solid var(--orange);
+    }
+    .speaker-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95em;
+      color: var(--dark);
+    }
+    .speaker-affiliation {
       font-size: 0.85em;
-      border-top: 1px solid #ddd;
-      margin-top: 40px;
+      color: #777;
+      margin-top: 2px;
+    }
+
+    /* Sponsors */
+    .sponsors {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .sponsors img {
+      height: 50px;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .sponsors img:hover { opacity: 1; }
+
+    /* Organizer */
+    .organizer-section {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+    .organizer-section .org-text { flex: 1; }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 0.85em;
     }
     footer a {
-      color: #888;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
     }
-    @media (max-width: 640px) {
-      header h1 { font-size: 1.7em; }
-      header { padding: 40px 0 30px; }
-      .book-callout { flex-direction: column; }
+    footer a:hover { color: white; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hero { padding: 100px 20px 60px; }
+      .hero-logo { max-width: 90%; }
+      .about-grid { grid-template-columns: 1fr; gap: 0; }
+      .book-layout { flex-direction: column; text-align: center; }
+      .speakers-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .organizer-section { flex-direction: column; }
+      .section h2 { font-size: 1.4em; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>After the Digital Tornado</h1>
-      <div class="subtitle">The Wharton School, University of Pennsylvania &middot; Philadelphia, PA</div>
-      <div class="date">November 17&ndash;18, 2017</div>
-    </header>
 
-    <div class="section">
-      <h2>About</h2>
-      <p>Networks powered by algorithms are eating everything. Many contemporary technology trends&mdash;Internet of Things, Big Data, Platform Economy, Blockchain, and Algorithmic Society&mdash;are manifestations of this larger phenomenon. Growing tensions around governance, innovation, surveillance, competition, consumer/worker protection, privacy, and discrimination are best understood within a broader frame. The algorithmic networked world poses deep questions about power, freedom, fairness, and human agency.</p>
-      <p>Through the conference and associated edited volume, a distinguished interdisciplinary group of scholars considered the challenges and opportunities as the physical and digital worlds merge.</p>
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">ATDT</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#book">Book</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#organizer">Organizer</a>
+      </div>
     </div>
+  </nav>
 
-    <div class="origin">
-      <h2>Origin</h2>
-      <p>In 1997, the U.S. Federal Communications Commission published <em>Digital Tornado: The Internet and Telecommunications Policy</em>, one of the first examinations by a government agency of the transformative potential of the internet. The paper was written by Kevin Werbach, then Counsel for New Technology Policy at the FCC.</p>
-      <p>Twenty years later, little remains untouched by the wave of digital connectivity that paper anticipated. Yet fundamental questions remain unresolved, and new questions have emerged.</p>
+  <div class="hero">
+    <div class="hero-inner">
+      <img src="images/Digital_Tornado.png" alt="After the Digital Tornado: Networks, Algorithms, Humanity" class="hero-logo">
+      <div class="hero-divider"></div>
+      <div class="venue"><strong>The Wharton School</strong>, University of Pennsylvania &middot; November 17&ndash;18, 2017</div>
     </div>
-
-    <div class="section">
-      <h2>The Edited Volume</h2>
-      <p>The conference resulted in the book <a href="https://www.cambridge.org/core/books/after-the-digital-tornado/3D4D45D04B0ECA99D8D8AF81DBAD147B" target="_blank" rel="noopener"><em>After the Digital Tornado: Networks, Algorithms, Humanity</em></a>, edited by Kevin Werbach, published by Cambridge University Press in 2020.</p>
-      <p>Contributors include leading scholars in law, policy, technology, and business examining how algorithmic networks are reshaping society.</p>
-    </div>
-
-    <div class="section">
-      <h2>Organizer</h2>
-      <p><strong>Kevin Werbach</strong> is Professor of Legal Studies and Business Ethics at the Wharton School of the University of Pennsylvania.</p>
-      <p><a href="https://werbach.com">werbach.com</a></p>
-    </div>
-
-    <footer>
-      &copy; Kevin Werbach | <a href="https://werbach.com">werbach.com</a>
-    </footer>
   </div>
+
+  <div class="section" id="about">
+    <div class="section-inner">
+      <h2>About</h2>
+      <div class="section-subtitle">Networks &middot; Algorithms &middot; Humanity</div>
+      <div class="about-grid">
+        <div>
+          <p>Networks powered by algorithms are eating everything. Many of the contemporary technology trends with the greatest significance for the economy and for public policy&mdash;Internet of Things, Big Data, Platform Economy, Blockchain, and Algorithmic Society&mdash;should be seen as manifestations of this larger phenomenon.</p>
+          <p>Growing tensions around governance, innovation, surveillance, competition, consumer/worker protection, privacy, and discrimination are best understood within a broader frame. The algorithmic networked world poses deep questions about power, freedom, fairness, and human agency.</p>
+        </div>
+        <div>
+          <p>Ubiquitous networking means the transformation of every form of economic activity along the same lines as the internet. Algorithmic control means that increasingly dynamic software will manage not just transactions and communication, but also human systems.</p>
+          <p>Our cultures and institutions are not well-adapted to this new environment. A distinguished interdisciplinary group of scholars considered the challenges and opportunities as the physical and digital worlds merge.</p>
+        </div>
+      </div>
+      <div class="origin-box">
+        <p>In 1997, the U.S. Federal Communications Commission published Kevin Werbach's working paper, <em>Digital Tornado</em>, one of the first examinations by a government agency of the transformative potential of the internet.</p>
+        <p>Twenty years later, little remains untouched by the wave of digital connectivity. Yet fundamental questions remain unresolved, and even more serious new questions have emerged.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-alt" id="book">
+    <div class="section-inner">
+      <h2>The Book</h2>
+      <div class="section-subtitle">Cambridge University Press, 2020</div>
+      <div class="book-layout">
+        <div class="book-text">
+          <h3>After the Digital Tornado: Networks, Algorithms, Humanity</h3>
+          <p>Edited by Kevin Werbach</p>
+          <p>The conference resulted in an edited volume published by Cambridge University Press in 2020. Contributors include leading scholars in law, policy, technology, and business examining how algorithmic networks are reshaping society.</p>
+          <a href="https://www.cambridge.org/core/books/after-the-digital-tornado/3D4D45D04B0ECA99D8D8AF81DBAD147B" class="cta-button" target="_blank" rel="noopener">View at Cambridge University Press</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="schedule">
+    <div class="section-inner">
+      <h2>Schedule</h2>
+      <div class="section-subtitle">Two days at Steinberg-Dietrich Hall</div>
+
+      <div class="schedule-day">
+        <h3>Friday, November 17</h3>
+        <div class="schedule-item">
+          <div class="schedule-time">11:00</div>
+          <div class="schedule-content"><span class="schedule-title">Registration</span></div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">12:00</div>
+          <div class="schedule-content"><span class="schedule-title">Lunch on your own</span></div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">1:00</div>
+          <div class="schedule-content">
+            <span class="schedule-title">Introduction</span>
+            <div class="schedule-speakers">Kevin Werbach, Wharton School; Geoffrey Garrett, Dean, The Wharton School</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">1:30</div>
+          <div class="schedule-content">
+            <span class="schedule-title">Panel: 20 Years of Internet Policy</span>
+            <div class="schedule-speakers">Christopher Marsden, University of Sussex (UK); Gigi Sohn, Open Society Foundations, Georgetown, and Mozilla; Sally Wentworth, The Internet Society</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">2:30</div>
+          <div class="schedule-content"><span class="schedule-title">Break</span></div>
+        </div>
+
+        <div class="schedule-theme">Theme I: Networks</div>
+        <p class="schedule-theme-desc">The network is the basic organizing structure of our increasingly digital society. This section considers how private and governmental actors seek to exploit the networked environment, and what mechanisms could promote the most desirable outcomes.</p>
+
+        <div class="schedule-item">
+          <div class="schedule-time">2:50</div>
+          <div class="schedule-content">
+            <span class="schedule-title">Networks 1</span>
+            <div class="schedule-speakers">Viktor Mayer-Sch&ouml;nberger, Oxford; Tim Wu, Columbia Law School; Discussant: Herbert Hovenkamp, Penn Law / Wharton</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">4:00</div>
+          <div class="schedule-content">
+            <span class="schedule-title">Networks 2</span>
+            <div class="schedule-speakers">Yochai Benkler, Harvard Law School; Julie Cohen, Georgetown Law Center; Discussant: Christopher Yoo, Penn Law School</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">5:10</div>
+          <div class="schedule-content"><span class="schedule-title">Reception</span></div>
+        </div>
+      </div>
+
+      <div class="schedule-day">
+        <h3>Saturday, November 18</h3>
+        <div class="schedule-item">
+          <div class="schedule-time">9:00</div>
+          <div class="schedule-content">
+            <span class="schedule-title">Welcome</span>
+            <div class="schedule-speakers">Kevin Werbach, Wharton School</div>
+          </div>
+        </div>
+
+        <div class="schedule-theme">Theme II: Algorithms</div>
+        <p class="schedule-theme-desc">As more and more decisions are automated through analytics that substitute correlations for causation and understanding, foundational notions of fairness and responsibility come into question.</p>
+
+        <div class="schedule-item">
+          <div class="schedule-time">9:20</div>
+          <div class="schedule-content">
+            <span class="schedule-title">Technical Talk: Machine Learning and Algorithms</span>
+            <div class="schedule-speakers">Michael Kearns, University of Pennsylvania</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">9:40</div>
+          <div class="schedule-content">
+            <span class="schedule-title">Algorithms 1</span>
+            <div class="schedule-speakers">Kartik Hosanagar, Wharton; Kevin Werbach, Wharton; Discussant: Kathy Strandburg, NYU</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">10:50</div>
+          <div class="schedule-content"><span class="schedule-title">Break</span></div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">11:10</div>
+          <div class="schedule-content">
+            <span class="schedule-title">Algorithms 2</span>
+            <div class="schedule-speakers">Deirdre Mulligan, UC Berkeley; Christian Sandvig, University of Michigan; Discussant: Ellen Goodman, Rutgers Law School</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">12:20</div>
+          <div class="schedule-content"><span class="schedule-title">Lunch</span></div>
+        </div>
+
+        <div class="schedule-theme">Theme III: Humanity</div>
+        <p class="schedule-theme-desc">What is the future for people in an environment increasingly dominated by data-driven algorithms and connected machines? Can we find solutions that promote human flourishing?</p>
+
+        <div class="schedule-item">
+          <div class="schedule-time">1:30</div>
+          <div class="schedule-content">
+            <span class="schedule-title">Technical Talk: Security and Privacy</span>
+            <div class="schedule-speakers">Bruce Schneier, Harvard</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">1:50</div>
+          <div class="schedule-content">
+            <span class="schedule-title">Humanity 1</span>
+            <div class="schedule-speakers">Helen Nissenbaum, Cornell; Siva Vaidhyanathan, University of Virginia; Discussant: Joel Reidenberg, Fordham Law School</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">3:00</div>
+          <div class="schedule-content"><span class="schedule-title">Break</span></div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">3:30</div>
+          <div class="schedule-content">
+            <span class="schedule-title">Humanity 2</span>
+            <div class="schedule-speakers">Brett Frischmann, Villanova; Shoshana Zuboff, Harvard Business School; Discussant: Joseph Turow, Annenberg School, Penn</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">4:40</div>
+          <div class="schedule-content">
+            <span class="schedule-title">Panel: Looking to the Future</span>
+            <div class="schedule-speakers">Karen Levy, Cornell; Julia Powles, NYU Law School &amp; Cornell Tech; Lauren Henry Scholz, Florida State University</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">5:30</div>
+          <div class="schedule-content"><span class="schedule-title">Closing Reception</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-alt" id="speakers">
+    <div class="section-inner">
+      <h2>Speakers</h2>
+      <div class="section-subtitle">Presenters &amp; Discussants</div>
+      <div class="speakers-grid">
+        <div class="speaker">
+          <div class="speaker-name">Solon Barocas</div>
+          <div class="speaker-affiliation">Cornell University</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Yochai Benkler</div>
+          <div class="speaker-affiliation">Harvard Law School</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Julie Cohen</div>
+          <div class="speaker-affiliation">Georgetown Law Center</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Brett Frischmann</div>
+          <div class="speaker-affiliation">Villanova University</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Geoffrey Garrett</div>
+          <div class="speaker-affiliation">Dean, The Wharton School</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Ellen Goodman</div>
+          <div class="speaker-affiliation">Rutgers Law School</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Kartik Hosanagar</div>
+          <div class="speaker-affiliation">Wharton School, Penn</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Herbert Hovenkamp</div>
+          <div class="speaker-affiliation">Penn Law / Wharton</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Ifeoma Ajunwa</div>
+          <div class="speaker-affiliation">Cornell University</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Michael Kearns</div>
+          <div class="speaker-affiliation">University of Pennsylvania</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Karen Levy</div>
+          <div class="speaker-affiliation">Cornell University</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Christopher Marsden</div>
+          <div class="speaker-affiliation">University of Sussex (UK)</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Viktor Mayer-Sch&ouml;nberger</div>
+          <div class="speaker-affiliation">Oxford Internet Institute</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Deirdre Mulligan</div>
+          <div class="speaker-affiliation">UC Berkeley</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Helen Nissenbaum</div>
+          <div class="speaker-affiliation">Cornell Tech</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Julia Powles</div>
+          <div class="speaker-affiliation">NYU Law School &amp; Cornell Tech</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Joel Reidenberg</div>
+          <div class="speaker-affiliation">Fordham Law School</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Christian Sandvig</div>
+          <div class="speaker-affiliation">University of Michigan</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Bruce Schneier</div>
+          <div class="speaker-affiliation">Harvard</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Lauren Henry Scholz</div>
+          <div class="speaker-affiliation">Florida State University</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Gigi Sohn</div>
+          <div class="speaker-affiliation">Open Society Foundations, Georgetown</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Kathy Strandburg</div>
+          <div class="speaker-affiliation">New York University</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Joseph Turow</div>
+          <div class="speaker-affiliation">Annenberg School, Penn</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Siva Vaidhyanathan</div>
+          <div class="speaker-affiliation">University of Virginia</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Sally Wentworth</div>
+          <div class="speaker-affiliation">The Internet Society</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Kevin Werbach</div>
+          <div class="speaker-affiliation">Wharton School, Penn (Organizer)</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Tim Wu</div>
+          <div class="speaker-affiliation">Columbia Law School</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Christopher Yoo</div>
+          <div class="speaker-affiliation">Penn Law School</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Shoshana Zuboff</div>
+          <div class="speaker-affiliation">Harvard Business School</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="sponsors">
+    <div class="section-inner" style="text-align: center;">
+      <h2>Sponsors</h2>
+      <div class="section-subtitle">With support from</div>
+      <div class="sponsors">
+        <img src="images/Wharton-Logo-RGB.png" alt="The Wharton School">
+        <img src="images/CTIC-Logo-copy.png" alt="Center for Technology, Innovation, and Competition">
+        <img src="images/comcast.png" alt="Comcast">
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-alt" id="organizer">
+    <div class="section-inner">
+      <h2>Organizer</h2>
+      <div class="section-subtitle">Conference Chair</div>
+      <div class="organizer-section">
+        <div class="org-text">
+          <p><strong>Kevin Werbach</strong> is Professor of Legal Studies and Business Ethics at the Wharton School of the University of Pennsylvania. He is the author of <em>The Blockchain and the New Architecture of Trust</em> (MIT Press, 2018) and co-author of <em>For the Win: How Game Thinking Can Revolutionize Your Business</em>. Over 400,000 students have enrolled in his Coursera massive open online course. Previously he served as Counsel for New Technology Policy at the FCC, where he wrote <em>Digital Tornado</em>, the first comprehensive analysis of the internet's implications for communications policy.</p>
+          <p style="margin-top: 12px;"><a href="https://werbach.com">werbach.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; Kevin Werbach &middot; <a href="https://werbach.com">werbach.com</a></p>
+  </footer>
+
 </body>
 </html>
